@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H8 Model Deployment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="form">
+        <img src="https://jsday.id/images/sponsors/Logo-Hacktiv8.png" height="100px"/>
+        <h1>Hacktiv8 Final Project 3</h1>
+        <h6>Nindya Eka Apsari & Faradilla Ardiyani</h6>
+        <p>Prediksi Pasien Gagal Jantung</p>
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="form-style-agile">
+            <label>Usia</label>
+            <div class="pom-agile">
+                <input placeholder="Usia dalam tahun (Cth: 30)" name="Usia" type="text" required="">
+            </div>
+            <label>Fraksi Ejeksi</label>
+            <div class="pom-agile">
+                <input placeholder="Fraksi ejeksi (Cth: 35)" name="Fraksi_ejeksi" type="text" required="">
+            </div>
+            <label>Kreatinin Serum</label>
+                        <div class="pom-agile">
+                            <input placeholder="Kreatinin serum (Cth: 2.5)" name="Kreatinin_serum" type="text" required="">
+                        </div>
+            <label>Sodium Serum</label>
+                        <div class="pom-agile">
+                            <input placeholder="Sodium serum (Cth: 130)" name="Sodium_serum" type="text" required="">
+                        </div>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Prediksi</button>
+        </form>
+
+
+        <p class="message">{{ prediction_text }}</p>
+    </div>
+
+</body>
+</html>
